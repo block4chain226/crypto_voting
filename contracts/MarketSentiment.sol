@@ -1,9 +1,9 @@
 //SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.7;
+pragma solidity ^0.8.4;
 
 import "hardhat/console.sol";
 
-contract marketsentiment{
+contract MarketSentiment{
     address public owner;
     string[] public tickersArray;
     mapping(bytes32=>mapping(address=>bool)) roles;
@@ -60,5 +60,10 @@ contract marketsentiment{
         emit tickerUpdated(t.up, t.down, msg.sender, _ticker);
     }
 
+    function getVotes(string memory _ticker) public view returns(uint up, uint down){
+        require(Tickers[_ticker].exist, "Ticker does not exist!");
+        ticker storage t = Tickers[_ticker];
+        return(t.up, t.down);
+    }
  
 }
