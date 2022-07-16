@@ -43,6 +43,7 @@ contract MarketSentiment{
     function grantRole(bytes32 _role, address _account) external onlyRole(ADMIN){
        _grantRole(_role, _account);
     }
+    
 
     function addTicker(string memory _ticker) public onlyRole(ADMIN){
         require(!Tickers[_ticker].exist, "Ticker already exist!");

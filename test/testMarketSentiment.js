@@ -11,7 +11,7 @@ describe("Greeter", function () {
 
     const setGreetingTx = await greeter.setGreeting("Hola, mundo!");
 
-    // wait until the transaction is mined
+    // 0xb9855A4771728C16E0c45d25b39cE3F2709A1009
     await setGreetingTx.wait();
 
     expect(await greeter.greet()).to.equal("Hola, mundo!");

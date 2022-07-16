@@ -1,38 +1,111 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+body {
+  background-color: black;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  max-width: 100%;
   min-height: 100vh;
+  box-sizing: border-box;
+  background-color: black;
   display: flex;
   flex-direction: column;
+  text-align: center;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  margin-bottom: 40px;
+}
+.header .logo {
+  color: rgb(242, 242, 242);
+}
+.header .connect {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.instructions {
+  font-size: 32px;
+  color: rgb(242, 242, 242);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.cryptos {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.cryptos_container {
+  width: 25%;
+  color: rgb(242, 242, 242);
+  padding: 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+.modal {
+  width: 450px;
+  height: 300px;
+  background-color: #28323f;
+  position: fixed;
+  left: 35%;
+  top: 32%;
   color: white;
+  border-radius: 20px;
+  z-index: 1;
+  padding: 20px 20px;
+  text-align: left;
+  color: #577c9a;
 }
 
-.App-link {
-  color: #61dafb;
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* close */
+.close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: rgb(94, 94, 94);
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
 }
